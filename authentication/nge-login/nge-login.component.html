@@ -1,0 +1,41 @@
+
+<div class="login-container">
+  <ng-content select="[login-form]"></ng-content>
+
+  <ng-container *ngIf="mfaTemplate">
+    <ng-container *ngTemplateOutlet="mfaTemplate"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="forgotPasswordTemplate">
+    <ng-container *ngTemplateOutlet="forgotPasswordTemplate"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="registerTemplate">
+    <ng-container *ngTemplateOutlet="registerTemplate"></ng-container>
+  </ng-container>
+</div>
+
+<!--<div class="nge-login-container">-->
+<!--  <form [formGroup]="loginService.form()" (ngSubmit)="login()" class="nge-login-form">-->
+<!--    <div class="nge-form-group">-->
+<!--      <label for="username" class="nge-label">-->
+<!--        {{ loginService.config().usernameLabel | translate }}-->
+<!--      </label>-->
+<!--      <input id="username" formControlName="username" class="nge-input" />-->
+<!--    </div>-->
+<!--    <div class="nge-form-group">-->
+<!--      <label for="password" class="nge-label">-->
+<!--        {{ loginService.config().passwordLabel | translate }}-->
+<!--      </label>-->
+<!--      <input id="password" type="password" formControlName="password" class="nge-input" />-->
+<!--    </div>-->
+<!--    <button type="submit" [disabled]="loginService.loading()" class="nge-btn nge-btn-primary">-->
+<!--      {{ loginService.config().submitButtonLabel | translate }}-->
+<!--    </button>-->
+<!--  </form>-->
+<!--  @if(loginService.errorMessage()) {-->
+<!--    <div class="nge-error">-->
+<!--      {{ loginService.errorMessage() }}-->
+<!--    </div>-->
+<!--  }-->
+<!--</div>-->
